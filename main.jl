@@ -24,8 +24,8 @@ function multiplicar()
     global matriz_resultante
     if tipo_mult == "sec"
         matriz_resultante = mult_secuencial(matriz_A, matriz_B, N)
-    elseif tipo_mult == "bloq"
-        matriz_resultante = mult_bloques(matriz_A, matriz_B, N)
+    elseif tipo_mult == "strips"
+        matriz_resultante = mult_strips(matriz_A, matriz_B, N)
     end
 end
 
