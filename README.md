@@ -5,5 +5,5 @@ Ejecución:
 ```
 
 -t: cantidad de hilos
--tipo: sec o strips
+-tipo: sec|strips|strips-manual
 -N: tamaño de la matriz

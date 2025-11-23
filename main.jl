@@ -6,14 +6,16 @@ include("src/mult_secuencial.jl")
 include("src/mult_bloques.jl")
 include("src/mult_strips.jl")
 include("src/imprimir_matriz.jl")
+include("src/mult_strips_manual.jl")
 
 
-nth = nthreads()
-println("$nth hilos.")
 
 # lee parametros de entrada del usuario
 N = definir_tamanio()
 tipo_mult = definir_tipo_mult()
+
+nth = nthreads()
+println("$nth hilos para una matriz de $N x $N.")
 
 matriz_A = ones(N, N)
 matriz_B = ones(N, N)
@@ -26,6 +28,8 @@ function multiplicar()
         matriz_resultante = mult_secuencial(matriz_A, matriz_B, N)
     elseif tipo_mult == "strips"
         matriz_resultante = mult_strips(matriz_A, matriz_B, N)
+    elseif tipo_mult == "strips-manual"
+        matriz_resultante = mult_strips_manual(matriz_A, matriz_B, N)
     end
 end
 
